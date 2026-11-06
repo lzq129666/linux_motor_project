@@ -1,0 +1,12 @@
+\build/
+motor_app
+motor_server
+motor_client
+logs/*.log
+logs/*.csv
+*.db
+*.sqlite
+.vscode/
+*.swp
+
+
