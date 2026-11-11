@@ -11,14 +11,17 @@ MotorSimulator::MotorSimulator(double max_rpm ,double tau ){
     max_rpm_ = max_rpm;
     tau_ = tau;
 }
+
 void MotorSimulator::setLoad(double load_rpm){
     load_rpm_ = load_rpm;
 }
+
 void MotorSimulator::setControlOutput(double output){
     if(output < 0) output_ = 0;
     if(output > 1) output_ = 1;
     output_ = output;
 }
+
 void MotorSimulator::update(double dt){
     if( dt < 0) return;
     double motor_drive_rpm = output_ * max_rpm_;
@@ -28,9 +31,11 @@ void MotorSimulator::update(double dt){
         realtime_speed_ = 0;
     }
 }
+
 double MotorSimulator::getSpeed() const{
     return realtime_speed_;
 }
+
 void MotorSimulator::reset(){
     output_ = 0.0;
     load_rpm_ = 0.0;
